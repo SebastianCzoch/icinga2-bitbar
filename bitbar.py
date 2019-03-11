@@ -4,7 +4,7 @@
 # <bitbar.author>Sebastian Czoch</bitbar.author>
 # <bitbar.author.github>SebastianCzoch</bitbar.author.github>
 # <bitbar.desc>Icinga2 monitoring BitBar plugin</bitbar.desc>
-# <bitbar.image>https://github.com/SebastianCzoch/icinga2-bitbar/blob/master/assets/bitbar.png?raw=true</bitbar.image>
+# <bitbar.image>https://github.com/SebastianCzoch/icinga2-bitbar/blob/master/assets/bitbar2.png?raw=true</bitbar.image>
 # <bitbar.dependencies>python3,requests</bitbar.dependencies>
 # <bitbar.abouturl>https://github.com/SebastianCzoch/icinga2-bitbar</bitbar.abouturl>
 
@@ -112,6 +112,7 @@ def __print_service(item):
             __get_color_for_item(item),
         )
     )
+    print("--{}".format(item["attrs"]["last_check_result"]["output"]))
     print(
         '--Acknowledge | bash={} param2=ack param3=service param4="{}" terminal=false refresh=true'.format(
             SCRIPT_PATH, item["attrs"]["__name"]
@@ -133,6 +134,7 @@ def __print_service_acked(item):
             __get_color_for_item(item),
         )
     )
+    print("----{}".format(item["attrs"]["last_check_result"]["output"]))
     print(
         '----Remove acknowledgement | bash={} param2=remove_ack param3=service param4="{}" terminal=false refresh=true'.format(
             SCRIPT_PATH, item["attrs"]["__name"]
@@ -152,6 +154,7 @@ def __print_host(item):
             item["attrs"]["display_name"], __get_color_for_item(item)
         )
     )
+    print("--{}".format(item["attrs"]["last_check_result"]["output"]))
     print(
         '--Acknowledge | bash={} param2=ack param3=host param4="{}" terminal=false refresh=true'.format(
             SCRIPT_PATH, item["attrs"]["__name"]
@@ -171,6 +174,7 @@ def __print_host_acked(item):
             item["attrs"]["display_name"], __get_color_for_item(item)
         )
     )
+    print("----{}".format(item["attrs"]["last_check_result"]["output"]))
     print(
         '----Remove acknowledgement | bash={} param2=remove_ack param3=host param4="{}" terminal=false refresh=true'.format(
             SCRIPT_PATH, item["attrs"]["__name"]

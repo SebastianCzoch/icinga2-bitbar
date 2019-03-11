@@ -4,7 +4,9 @@ icinga2-bitbar
 This is [Icinga2](https://icinga.com) plugin for [Bitbar](https://github.com/matryer/bitbar). It is using Icinga2 API.
 
 ## Screenshots
-![screenshot](./assets/bitbar.png)
+![screenshot](./assets/bitbar1.png)
+
+![screenshot](./assets/bitbar2.png)
 
 ## Features
 * Show list of
